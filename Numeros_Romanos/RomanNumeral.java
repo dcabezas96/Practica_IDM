@@ -52,13 +52,4 @@ public class RomanNumeral {
       return result;
     }
   }
-  
-  public static void main(String[] args){
-	  System.out.println(new RomanNumeral().convierte("XCIX")); //99
-	  System.out.println(new RomanNumeral().convierte("XIV")); //14
-	  System.out.println(new RomanNumeral().convierte("MMCM")); //2900
-	  System.out.println(new RomanNumeral().convierte("IIIIIII")); //no válido
-	  System.out.println(new RomanNumeral().convierte("ZKP")); //caracteres incorrectos 
-	  System.out.println(new RomanNumeral().convierte("")); //vacío
-	}
 }
