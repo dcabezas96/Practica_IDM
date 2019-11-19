@@ -1,7 +1,4 @@
-package Ejercicio_embotelladora;
-
-import java.lang.Math;
-import java.util.*;
+//package ejercicio_embotelladora;
 
 public class Embotelladora {
   
