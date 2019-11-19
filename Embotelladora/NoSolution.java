@@ -1,4 +1,4 @@
-package Ejercicio_embotelladora;
+//package ejercicio_embotelladora;
 
 public class NoSolution extends Exception {
 	public static final long serialVersionUID = 700L;
