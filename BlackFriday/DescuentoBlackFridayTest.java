@@ -1,4 +1,4 @@
-package Ejercicio_blackfriday;
+//package ejercicio_blackfriday;
 
 import java.security.InvalidParameterException;
 
@@ -9,6 +9,7 @@ import org.junit.Test;
 public class DescuentoBlackFridayTest {
 	private double precio;
 	private double descuento;
+	
 	@Test
 	public void DescuentoNoValido() {
 		precio = 35.0;
@@ -21,12 +22,14 @@ public class DescuentoBlackFridayTest {
 		fail("InvalidParameterException expected");
 	}
 	
+	@Test
 	public void DescuentoValido() {
 		precio = 35.0;
 		descuento = 70.0;
 		assertTrue("Descuento Black:", (DescuentoBlackFriday.PrecioFinal(precio,descuento)) == 24.5);
 	}
 	
+	@Test
 	public void PrecioNoValido() {
 		precio = -35.0;
 		descuento = 20.0;
@@ -38,6 +41,7 @@ public class DescuentoBlackFridayTest {
 		fail("InvalidParameterException expected");
 	}
 	
+	@Test
 	public void Negativo() {
 		precio = -35.0;
 		descuento = -20.0;
@@ -48,6 +52,4 @@ public class DescuentoBlackFridayTest {
 		}
 		fail("InvalidParameterException expected");
 	}
-
-
 }
