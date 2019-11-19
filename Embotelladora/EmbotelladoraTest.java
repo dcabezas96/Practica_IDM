@@ -1,4 +1,4 @@
-package Ejercicio_embotelladora;
+//package ejercicio_embotelladora;
 
 import static org.junit.Assert.*;
 
@@ -12,7 +12,7 @@ public class EmbotelladoraTest {
 	      int grandes = 8;
 	      int pequenas = 3;
 	      try {
-		assertEquals ("Sobran pequenas y grandes",  0, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
+	    	  assertEquals ("Sobran pequenas y grandes",  0, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
 	      } catch (NoSolution e) {
 	        fail ("0 expected");
 	      }
@@ -24,7 +24,7 @@ public class EmbotelladoraTest {
 	      int grandes = 7;
 	      int pequenas = 4;
 	      try {
-		assertEquals ("Sobran grandes",  0, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
+	    	  assertEquals ("Sobran grandes",  0, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
 	      } catch (NoSolution e) {
 	        fail ("0 expected");
 	      }
@@ -36,7 +36,7 @@ public class EmbotelladoraTest {
 	      int grandes = 6;
 	      int pequenas = 14;
 	      try {
-		assertEquals ("Sobran pequenas",  10, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
+	    	  assertEquals ("Sobran pequenas",  10, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
 	      } catch (NoSolution e) {
 	        fail ("10 expected");
 	      }
@@ -48,7 +48,7 @@ public class EmbotelladoraTest {
 	      int grandes = 6;
 	      int pequenas = 2;
 	      try {
-		assertEquals ("No sobran",  2, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
+	    	  assertEquals ("No sobran",  2, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
 	      } catch (NoSolution e) {
 	        fail ("2 expected");
 	      }
@@ -60,10 +60,11 @@ public class EmbotelladoraTest {
 	      int grandes = 0;
 	      int pequenas = 12;
 	      try {
-		assertEquals ("Sobran pequenas",  9, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
+	    	  assertEquals ("Sobran pequenas",  9, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
 	      } catch (NoSolution e) {
 	        fail ("8 expected");
 	      }
 	   }
-
 }
+
+
