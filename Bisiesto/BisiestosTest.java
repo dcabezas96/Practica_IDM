@@ -3,8 +3,6 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 //import java.util.*;
-import java.security.InvalidParameterException; //para la excepción invalid parameter exception
-//https://dosc.oracle.com/javase/7/docs/api/java/security/InvalidParameterException.html
 
 public class BisiestosTest {
 	
@@ -15,7 +13,11 @@ public class BisiestosTest {
 	@Test
 	public void añovalido() {  
 		año=2000;
-		assertEquals("Año bisiesto",true,bisiesto.esBisiesto(año));
+		try {
+			assertEquals("Año bisiesto",true,bisiesto.esBisiesto(año));
+		}catch (InvalidParameter e) {
+			fail("InvalidParameter expected");
+		}
 	}
 	
 	//Salta excepción con año no valido, es negativo 
@@ -24,38 +26,53 @@ public class BisiestosTest {
 		año=-50;
 		try {
 			bisiesto.esBisiesto(año);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");
-		
+		fail("InvalidParameter expected");
 	}
 	
 	//Año divisible entre 4 y 100 ==> No bisiesto
 	@Test
 	public void divisible4y100() {
 		año=2200;
-		assertEquals("Año divisible entre 4 y 100",false,bisiesto.esBisiesto(año));
+		try {
+			assertEquals("Año divisible entre 4 y 100",false,bisiesto.esBisiesto(año));
+		}catch(InvalidParameter e) {
+			fail ("InvalidParameter expected");
+		}
 	}
 	
 	//Año divisible entre 4 ==> Bisiesto
 	@Test
 	public void divisible4() {
 		año=2008;
-		assertEquals("Año divisible entre 4",true,bisiesto.esBisiesto(año));
+		try {
+			assertEquals("Año divisible entre 4",true,bisiesto.esBisiesto(año));
+		}catch (InvalidParameter e) {
+			fail("InvalidParameter expected");
+		}
 	}
 
 	//Año divisible entre 4,100 y 400 ==> Bisiesto
 	@Test
 	public void divisible4y100y400() {
 		año=1600;
-		assertEquals("Año divisible entre 4,100 y 400",true,bisiesto.esBisiesto(año));
+		try {
+			assertEquals("Año divisible entre 4,100 y 400",true,bisiesto.esBisiesto(año));
+		}catch (InvalidParameter e) {
+			fail("InvalidParameter expected");
+		}
 	}
 	
 	//Año 0, salta excepción 
-	@Test (expected=InvalidParameterException.class)
+	@Test 
 	public void añocero() {
 		año=0;
-		bisiesto.esBisiesto(año);
+		try {
+			bisiesto.esBisiesto(año);
+		}catch (InvalidParameter e) {
+			fail("InvalidParameter expected");
+		}
 	}
 }

@@ -3,7 +3,6 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 //import java.util.*;
-import java.security.InvalidParameterException;
 
 public class RomanNumeralTest {
 	
@@ -14,7 +13,11 @@ public class RomanNumeralTest {
 	@Test
 	public void numeroRomano() {
 		s="XIV";
-		assertTrue("numero romano correcto",14==roman.convierte(s));
+		try {
+			assertTrue("numero romano correcto",14==roman.convierte(s));
+		}catch (InvalidParameter e) {
+			fail("InvalidParameter expected");
+		}
 	}
 	
 	//Numero romano con caracteres inválidos
@@ -23,10 +26,10 @@ public class RomanNumeralTest {
 		s="JIH";
 		try {
 			roman.convierte(s);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");	
+		fail("InvalidParameter expected");	
 	}
 	
 	//Demasiadas letras repetidas 
@@ -35,10 +38,10 @@ public class RomanNumeralTest {
 		s="XXXXXX";
 		try {
 			roman.convierte(s);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");	
+		fail("InvalidParameter expected");	
 	}
 	
 	//No hay número romano a convertir 
@@ -47,10 +50,10 @@ public class RomanNumeralTest {
 		s="";
 		try {
 			roman.convierte(s);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");	
+		fail("InvalidParameter expected");	
 	}
 	
 	//Aleatorio
@@ -59,10 +62,10 @@ public class RomanNumeralTest {
 		s="asdfasfsa";
 		try {
 			roman.convierte(s);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");	
+		fail("InvalidParameter expected");	
 	}
 	
 	//Alguna letra repetida
@@ -71,9 +74,9 @@ public class RomanNumeralTest {
 		s="XIIII";
 		try {
 			roman.convierte(s);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");	
+		fail("InvalidParameter expected");	
 	}
 }

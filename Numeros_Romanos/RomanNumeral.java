@@ -1,7 +1,6 @@
 //package ejercicio_numerosromanos;
 
 import java.util.HashMap;
-import java.security.InvalidParameterException;
 
 public class RomanNumeral {
   static HashMap<Character, Integer> map;
@@ -17,12 +16,12 @@ public class RomanNumeral {
     map.put('M', 1000);
   }
 
-  public int obtenerValorRomanoNumerico(char ch) {
+  public int obtenerValorRomanoNumerico(char ch) throws InvalidParameter {
     if (map.containsKey(ch)) {
       return map.get(ch);
     }
     else {
-      throw new InvalidParameterException("El número romano contiene caracteres no válidas ");
+      throw new InvalidParameter("El número romano contiene caracteres no válidas ");
     }
   }
   
@@ -33,9 +32,9 @@ public class RomanNumeral {
 	&& !roman.contains("DD");
   }
 
-  public int convierte(String s) throws InvalidParameterException {
+  public int convierte(String s) throws InvalidParameter {
     if(s==null || s.isEmpty() || !comprobarRomano(s)) {
-	throw new InvalidParameterException("El string romano está vacío o no cumple los parámetros");
+	throw new InvalidParameter("El string romano está vacío o no cumple los parámetros");
     }
     else {
       int index = s.length() - 1;
