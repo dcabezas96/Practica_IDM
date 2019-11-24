@@ -1,7 +1,5 @@
 //package ejercicio_blackfriday;
 
-import java.security.InvalidParameterException;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -16,17 +14,22 @@ public class DescuentoBlackFridayTest {
 		descuento = 200.0;
 		try {
 			DescuentoBlackFriday.PrecioFinal(precio,descuento);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");
+		fail("InvalidParameter expected");
 	}
 	
 	@Test
 	public void DescuentoValido() {
 		precio = 35.0;
 		descuento = 70.0;
-		assertTrue("Descuento Black:", (DescuentoBlackFriday.PrecioFinal(precio,descuento)) == 24.5);
+		try {
+			assertTrue("Descuento Black:", (DescuentoBlackFriday.PrecioFinal(precio,descuento)) == 24.5);
+		}catch(InvalidParameter e) {
+			return;
+		}
+		fail("InvalidParameter expected");
 	}
 	
 	@Test
@@ -35,10 +38,10 @@ public class DescuentoBlackFridayTest {
 		descuento = 20.0;
 		try {
 			DescuentoBlackFriday.PrecioFinal(precio,descuento);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");
+		fail("InvalidParameter expected");
 	}
 	
 	@Test
@@ -47,9 +50,9 @@ public class DescuentoBlackFridayTest {
 		descuento = -20.0;
 		try {
 			DescuentoBlackFriday.PrecioFinal(precio,descuento);
-		}catch(InvalidParameterException e) {
+		}catch(InvalidParameter e) {
 			return;
 		}
-		fail("InvalidParameterException expected");
+		fail("InvalidParameter expected");
 	}
 }
