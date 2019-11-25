@@ -1,6 +1,8 @@
 # Practica_IDM
 Práctica realizada por Daniel Cabezas Recio y Jose Ángel García-Navas Requena
 
+En la carpeta Otras_comprobaciones evaluamos el código de otros compañeros a través de nuestros tests. 
+
 Instrucciones para compilar y ejecutar los archivos:
 
 1) cd nombreCarpeta
