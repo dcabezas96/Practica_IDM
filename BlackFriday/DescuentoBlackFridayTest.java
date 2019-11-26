@@ -1,12 +1,13 @@
 //package ejercicio_blackfriday;
 
 import static org.junit.Assert.*;
-
-import org.junit.Test;
+import org.junit.*;
+import java.util.*;
 
 public class DescuentoBlackFridayTest {
 	private double precio;
 	private double descuento;
+	private double myPi = 22.0d / 7.0d;
 	
 	@Test
 	public void DescuentoNoValido() {
@@ -20,17 +21,16 @@ public class DescuentoBlackFridayTest {
 		fail("InvalidParameter expected");
 	}
 	
-	@Test
-	public void DescuentoValido() {
-		precio = 35.0;
-		descuento = 70.0;
+	@Test 
+	public void Descuento_Valido() {
+		precio = 100;
+		descuento = 20;
 		try {
-			assertTrue("Descuento Black:", (DescuentoBlackFriday.PrecioFinal(precio,descuento)) == 24.5);
-		}catch(InvalidParameter e) {
-			return;
+			assertEquals (80.0,myPi,DescuentoBlackFriday.PrecioFinal(precio, descuento));
+		} catch (InvalidParameter e) {
+			fail ("80 expected");
 		}
-		fail("InvalidParameter expected");
-	}
+	 }
 	
 	@Test
 	public void PrecioNoValido() {

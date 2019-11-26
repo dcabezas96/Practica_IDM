@@ -13,7 +13,7 @@ public class DescuentoBlackFriday {
 			throw new InvalidParameter("Precio no válido");
 		}
 		
-		if(((100 - porcentajeDescuento)/100) < 0 || ((100 - porcentajeDescuento)/100) > 1) {
+		if(((100 - porcentajeDescuento)/100) < 0 || ((100 - porcentajeDescuento)/100) > 100) {
 			throw new InvalidParameter("Descuento ha de ser entre el 0 y 100");
 		}
 
