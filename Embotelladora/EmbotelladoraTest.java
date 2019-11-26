@@ -25,7 +25,7 @@ public class EmbotelladoraTest {
       int grandes = 7;
       int pequenas = 4;
       try {
-	assertEquals ("Sobran grandes",  -5, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
+    	  assertEquals ("Sobran grandes",  -5, Embotelladora.calculaBotellasPequenas(pequenas, grandes, total));
       } catch (NoSolution e) {
         fail ("0 expected");
       }
